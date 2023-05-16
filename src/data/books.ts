@@ -3,68 +3,49 @@ import { Book } from './../types/book';
 export const books: Book[] = [
     {
         id: 1,
-        title: 'The Lord of the Rings',
-        description: 'The Lord of the Rings is an epic high-fantasy novel written by English author and scholar J. R. R. Tolkien. The story began as a sequel to Tolkien\'s 1937 fantasy novel The Hobbit, but eventually developed into a much larger work.',
-        link: 'https://www.amazon.com/Lord-Rings-Fellowship-Ring-Towers/dp/0544003411',
-        localLink: './books/a_mind_for_numbers.pdf',
-        picture: 'https://m.media-amazon.com/images/I/51kfFS5-fnL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg',
-        author: 'J. R. R. Tolkien'
+        title: 'The 7 Habits of Highly Effective People: Powerful Lessons in Personal Change',
+        description: 'The 7 Habits of Highly Effective People, first published in 1989, is a business and self-help book written by Stephen Covey. Covey presents an approach to being effective in attaining goals by aligning oneself to what he calls "true north" principles based on a character ethic that he presents as universal and timeless.',
+        link: 'https://www.amazon.fr/Habits-Highly-Effective-People-Powerful/dp/0743269519',
+        localLink: './books/the_seven_habits_of_highly_effective_people.pdf',
+        picture: 'https://m.media-amazon.com/images/I/51hV5vGr4AL._SY291_BO1,204,203,200_QL40_ML2_.jpg',
+        author: 'Stephen R. Covey'
     },
     {
         id: 2,
-        title: 'The Hobbit',
-        description: 'The Hobbit, or There and Back Again is a children\'s fantasy novel by English author J. R. R. Tolkien. It was published on 21 September 1937 to wide critical acclaim, being nominated for the Carnegie Medal and awarded a prize from the New York Herald Tribune for best juvenile fiction.',
-        link: 'https://www.amazon.com/Hobbit-J-R-R-Tolkien/dp/054792822X',
+        title: 'A Mind For Numbers: How to Excel at Math and Science (Even If You Flunked Algebra)',
+        description: 'Whether you are a student struggling to fulfill a math or science requirement, or you are embarking on a career change that requires a higher level of math competency, A Mind for Numbers offers the tools you need to get a better grasp of that intimidating but inescapable field.',
+        link: 'https://www.amazon.com/Mind-Numbers-Science-Flunked-Algebra-ebook/dp/B00G3L19ZU',
         localLink: './books/a_mind_for_numbers.pdf',
-        picture: 'https://m.media-amazon.com/images/I/413V3sIKSJL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg',
-        author: 'J. R. R. Tolkien'
+        picture: 'https://m.media-amazon.com/images/I/41jOvUQ+dhL.jpg',
+        author: 'Barbara Oakley'
     },
     {
         id: 3,
-        title: 'The Silmarillion',
-        description: 'The Silmarillion is a collection of mythopoeic works by English writer J. R. R. Tolkien, edited and published posthumously by his son, Christopher Tolkien, in 1977, with assistance from Guy Gavriel Kay.',
-        link: 'https://www.amazon.com/Silmarillion-J-R-R-Tolkien/dp/0618391118',
+        title: 'A Mind For Numbers: How to Excel at Math and Science (Even If You Flunked Algebra)',
+        description: 'Whether you are a student struggling to fulfill a math or science requirement, or you are embarking on a career change that requires a higher level of math competency, A Mind for Numbers offers the tools you need to get a better grasp of that intimidating but inescapable field.',
+        link: 'https://www.amazon.com/Mind-Numbers-Science-Flunked-Algebra-ebook/dp/B00G3L19ZU',
         localLink: './books/a_mind_for_numbers.pdf',
-        picture: 'https://m.media-amazon.com/images/I/5116gnAKleL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg',
-        author: 'J. R. R. Tolkien'
+        picture: 'https://m.media-amazon.com/images/I/41jOvUQ+dhL.jpg',
+        author: 'Barbara Oakley'
     },
     {
         id: 4,
-        title: 'The Children of Húrin',
-        description: 'The Children of Húrin is an epic fantasy novel which forms the completion of a tale by J. R. R. Tolkien. He wrote the original version of the story in the late 1910s, revised it several times later, but did not complete it before his death in 1973.',
-        link: 'https://www.amazon.com/Children-H%C3%BArin-J-R-Tolkien/dp/0547086059',
+        title: 'A Mind For Numbers: How to Excel at Math and Science (Even If You Flunked Algebra)',
+        description: 'Whether you are a student struggling to fulfill a math or science requirement, or you are embarking on a career change that requires a higher level of math competency, A Mind for Numbers offers the tools you need to get a better grasp of that intimidating but inescapable field.',
+        link: 'https://www.amazon.com/Mind-Numbers-Science-Flunked-Algebra-ebook/dp/B00G3L19ZU',
         localLink: './books/a_mind_for_numbers.pdf',
-        picture: 'https://m.media-amazon.com/images/I/4184mRVo5uL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg',
-        author: 'J. R. R. Tolkien'
+        picture: 'https://m.media-amazon.com/images/I/41jOvUQ+dhL.jpg',
+        author: 'Barbara Oakley'
     },
+
     {
         id: 5,
-        title: 'The Fall of Gondolin',
-        description: 'The Fall of Gondolin is, in the writings of J.R.R. Tolkien, one of the original Lost Tales which formed the basis for a section in his later work, The Silmarillion. A stand-alone, book-length version of the story was published on 30 August 2018.',
-        link: 'https://www.amazon.fr/Fall-Gondolin-J-R-Tolkien/dp/0008302758',
+        title: 'A Mind For Numbers: How to Excel at Math and Science (Even If You Flunked Algebra)',
+        description: 'Whether you are a student struggling to fulfill a math or science requirement, or you are embarking on a career change that requires a higher level of math competency, A Mind for Numbers offers the tools you need to get a better grasp of that intimidating but inescapable field.',
+        link: 'https://www.amazon.com/Mind-Numbers-Science-Flunked-Algebra-ebook/dp/B00G3L19ZU',
         localLink: './books/a_mind_for_numbers.pdf',
-        picture: 'https://m.media-amazon.com/images/I/51vMPC46XML._SX319_BO1,204,203,200_.jpg',
-        author: 'J. R. R. Tolkien'
+        picture: 'https://m.media-amazon.com/images/I/41jOvUQ+dhL.jpg',
+        author: 'Barbara Oakley'
     },
-    {
-        id: 6,
-        title: 'The Unfinished Tales',
-        description: 'The Unfinished Tales of Númenor and Middle-earth is a collection of narratives by J. R. R. Tolkien, edited by his son Christopher Tolkien and published posthumously in 1980. The book collects works that were never completed by Tolkien.',
-        localLink: './books/a_mind_for_numbers.pdf',
-        link: 'https://www.amazon.com/Unfinished-N%C3%BAmenor-Middle-earth-J-R-R-Tolkien/dp/0544337999',
-        picture: 'https://m.media-amazon.com/images/I/41CASj4PdhL._SX331_BO1,204,203,200_.jpg',
-        author: 'J. R. R. Tolkien'
-    }
-];
 
-export const myCollection: Book[] = [
-    {
-        id: 1,
-        title: 'The Lord of the Rings',
-        description: 'The Lord of the Rings is an epic high-fantasy novel written by English author and scholar J. R. R. Tolkien. The story began as a sequel to Tolkien\'s 1937 fantasy novel The Hobbit, but eventually developed into a much larger work.',
-        localLink: './books/a_mind_for_numbers.pdf',
-        link: 'https://www.amazon.com/Lord-Rings-Fellowship-Ring-Towers/dp/0544003411',
-        picture: 'https://m.media-amazon.com/images/I/51kfFS5-fnL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg',
-        author: 'J. R. R. Tolkien'
-    },
-]
+];

@@ -2,7 +2,7 @@ import { Box, Button, Card, CardBody, CardFooter, CardHeader, Grid, GridItem, HS
 import { Icon } from '@chakra-ui/react';
 import { AiFillAmazonCircle } from 'react-icons/ai';
 import { FiExternalLink, FiBookOpen } from 'react-icons/fi';
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Book } from "../types/book";
 import { books } from "../data/books";
 
@@ -15,10 +15,6 @@ export const Library = () => {
         setBooksToRead(booksToRead.filter((b) => b.id !== book.id));
         setNextBook(book);
     };
-
-    useEffect(() => {
-        selectBook(books[0]);
-    });
 
     return (
         <Box px={16} py={8}>
@@ -49,14 +45,14 @@ export const Library = () => {
                     </Highlight>
                 </Heading>
 
-                <Grid templateColumns='repeat(3, 1fr)' gap={6} columnGap={4}>
+                <Grid templateColumns='repeat(auto-fill, minmax(450px, 1fr))' gap={6} columnGap={12}>
                     {
 
                         <GridItem>
-                            <Card w={'25rem'} h={'45rem'} borderRadius={4}>
+                            <Card borderRadius={4}>
 
                                 <CardHeader>
-                                    <HStack justifyContent={'space-between'} alignItems={'center'} p={2} borderRadius={4}>
+                                    <HStack justifyContent={'space-between'} gap={12} alignItems={'start'} p={2} borderRadius={4}>
                                         <Heading fontSize={'2xl'} fontWeight={'bold'}>
                                             {nextBook.title}
                                         </Heading>
@@ -94,19 +90,19 @@ export const Library = () => {
                     </Highlight>
                 </Heading>
 
-                <Grid templateColumns='repeat(3, 1fr)' gap={6} columnGap={4}>
+                <Grid templateColumns='repeat(auto-fill, minmax(450px, 1fr))' gap={6} columnGap={12}>
                     {
                         booksToRead.map((book) => (
-                            <GridItem>
-                                <Card w={'25rem'} h={'45rem'} borderRadius={4}>
+                            <GridItem key={book.id}>
+                                <Card borderRadius={4}>
 
                                     <CardHeader>
-                                        <HStack justifyContent={'space-between'} alignItems={'center'} p={2} borderRadius={4}>
+                                        <HStack justifyContent={'space-between'} gap={12} alignItems={'start'} p={2} borderRadius={4}>
                                             <Heading fontSize={'2xl'} fontWeight={'bold'}>
                                                 {book.title}
                                             </Heading>
 
-                                            <Button onClick={() => selectBook(book)} variant={'outline'} colorScheme="green" size={'sm'}>Select</Button>
+                                            <Button px={8} onClick={() => selectBook(book)} variant={'outline'} colorScheme="green" size={'sm'}>Select</Button>
 
                                         </HStack>
 
