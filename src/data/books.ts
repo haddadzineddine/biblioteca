@@ -18,34 +18,5 @@ export const books: Book[] = [
         localLink: './books/a_mind_for_numbers.pdf',
         picture: 'https://m.media-amazon.com/images/I/41jOvUQ+dhL.jpg',
         author: 'Barbara Oakley'
-    },
-    {
-        id: 3,
-        title: 'A Mind For Numbers: How to Excel at Math and Science (Even If You Flunked Algebra)',
-        description: 'Whether you are a student struggling to fulfill a math or science requirement, or you are embarking on a career change that requires a higher level of math competency, A Mind for Numbers offers the tools you need to get a better grasp of that intimidating but inescapable field.',
-        link: 'https://www.amazon.com/Mind-Numbers-Science-Flunked-Algebra-ebook/dp/B00G3L19ZU',
-        localLink: './books/a_mind_for_numbers.pdf',
-        picture: 'https://m.media-amazon.com/images/I/41jOvUQ+dhL.jpg',
-        author: 'Barbara Oakley'
-    },
-    {
-        id: 4,
-        title: 'A Mind For Numbers: How to Excel at Math and Science (Even If You Flunked Algebra)',
-        description: 'Whether you are a student struggling to fulfill a math or science requirement, or you are embarking on a career change that requires a higher level of math competency, A Mind for Numbers offers the tools you need to get a better grasp of that intimidating but inescapable field.',
-        link: 'https://www.amazon.com/Mind-Numbers-Science-Flunked-Algebra-ebook/dp/B00G3L19ZU',
-        localLink: './books/a_mind_for_numbers.pdf',
-        picture: 'https://m.media-amazon.com/images/I/41jOvUQ+dhL.jpg',
-        author: 'Barbara Oakley'
-    },
-
-    {
-        id: 5,
-        title: 'A Mind For Numbers: How to Excel at Math and Science (Even If You Flunked Algebra)',
-        description: 'Whether you are a student struggling to fulfill a math or science requirement, or you are embarking on a career change that requires a higher level of math competency, A Mind for Numbers offers the tools you need to get a better grasp of that intimidating but inescapable field.',
-        link: 'https://www.amazon.com/Mind-Numbers-Science-Flunked-Algebra-ebook/dp/B00G3L19ZU',
-        localLink: './books/a_mind_for_numbers.pdf',
-        picture: 'https://m.media-amazon.com/images/I/41jOvUQ+dhL.jpg',
-        author: 'Barbara Oakley'
-    },
-
+    }
 ];
