@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardBody, CardFooter, CardHeader, Center, FormControl, FormErrorMessage, FormHelperText, Grid, GridItem, HStack, Heading, Highlight, Image, Input, Link, Text, VStack, useToast } from "@chakra-ui/react";
+import { Box, Button, Card, CardBody, CardFooter, CardHeader, FormControl, FormErrorMessage, FormHelperText, Grid, GridItem, HStack, Heading, Highlight, Image, Input, Link, Text, VStack, useToast } from "@chakra-ui/react";
 import { Icon } from '@chakra-ui/react';
 import { AiFillAmazonCircle } from 'react-icons/ai';
 import { FiExternalLink, FiBookOpen } from 'react-icons/fi';
