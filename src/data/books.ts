@@ -8,7 +8,8 @@ export const books: Book[] = [
         link: 'https://www.amazon.fr/Habits-Highly-Effective-People-Powerful/dp/0743269519',
         localLink: './books/the_seven_habits_of_highly_effective_people.pdf',
         picture: 'https://m.media-amazon.com/images/I/51hV5vGr4AL._SY291_BO1,204,203,200_QL40_ML2_.jpg',
-        author: 'Stephen R. Covey'
+        author: 'Stephen R. Covey',
+        pages: 381
     },
     {
         id: 2,
@@ -17,6 +18,7 @@ export const books: Book[] = [
         link: 'https://www.amazon.com/Mind-Numbers-Science-Flunked-Algebra-ebook/dp/B00G3L19ZU',
         localLink: './books/a_mind_for_numbers.pdf',
         picture: 'https://m.media-amazon.com/images/I/41jOvUQ+dhL.jpg',
-        author: 'Barbara Oakley'
+        author: 'Barbara Oakley',
+        pages: 336
     }
 ];
