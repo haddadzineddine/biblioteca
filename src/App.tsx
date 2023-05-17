@@ -54,7 +54,6 @@ const App = () => {
   return (
     <Box>
       <SplachScreen />
-
       {
         isOpen ? <Modal isOpen={isOpen} onClose={onClose} >
           <ModalOverlay />
