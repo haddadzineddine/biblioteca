@@ -119,7 +119,7 @@ export const Library = () => {
                         currentReadingBook ? (
                             <Grid borderRadius={4} templateColumns='repeat(auto-fill, minmax(450px, 1fr))' gap={6} >
                                 <GridItem >
-                                    <Card borderRadius={4} >
+                                    <Card borderRadius={4} height={'full'}>
 
                                         <CardHeader>
                                             <HStack justifyContent={'space-between'} gap={12} alignItems={'start'} p={2} borderRadius={4}>
@@ -149,7 +149,7 @@ export const Library = () => {
                                     </Card>
                                 </GridItem>
                                 <GridItem >
-                                    <Card borderRadius={4}>
+                                    <Card borderRadius={4} >
 
                                         <CardHeader>
                                             <HStack justifyContent={'space-between'} gap={12} alignItems={'center'} p={2} borderRadius={4}>
@@ -225,12 +225,12 @@ export const Library = () => {
                         </Highlight>
                     </Heading>
 
-                    <Grid templateColumns='repeat(auto-fill, minmax(450px, 1fr))' gap={6} columnGap={12} borderRadius={4}>
+                    <Grid templateColumns='repeat(auto-fit, minmax(450px, 1fr))' gap={6} columnGap={12} borderRadius={4}>
                         {
                             leftBooksToRead.length > 0 ? (
                                 leftBooksToRead.map((book) => (
                                     <GridItem key={book.id}>
-                                        <Card borderRadius={4}>
+                                        <Card borderRadius={4} height={'full'}>
 
                                             <CardHeader>
                                                 <HStack justifyContent={'space-between'} gap={12} alignItems={'start'} p={2} borderRadius={4}>

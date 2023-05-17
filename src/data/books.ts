@@ -4,12 +4,12 @@ export const books: Book[] = [
     {
         id: 1,
         title: 'The 7 Habits of Highly Effective People: Powerful Lessons in Personal Change',
-        description: 'The 7 Habits of Highly Effective People, first published in 1989, is a business and self-help book written by Stephen Covey. Covey presents an approach to being effective in attaining goals by aligning oneself to what he calls "true north" principles based on a character ethic that he presents as universal and timeless.',
+        description: "The 7 Habits of Highly Effective People, first published in 1989, is a business and self-help book written by Stephen Covey. Covey presents an approach to being effective in attaining goals by aligning oneself to what he calls 'true north' principles based on a character ethic that he presents as universal and timeless.",
         link: 'https://www.amazon.fr/Habits-Highly-Effective-People-Powerful/dp/0743269519',
         localLink: 'https://drive.google.com/file/d/1orhlPJMOfYnK579VAxm5hJPOS3TPRiM_/view',
         picture: 'https://m.media-amazon.com/images/I/51hV5vGr4AL._SY291_BO1,204,203,200_QL40_ML2_.jpg',
         author: 'Stephen R. Covey',
-        pages: 381
+        pages: 422
     },
     {
         id: 2,
@@ -19,7 +19,7 @@ export const books: Book[] = [
         localLink: 'https://drive.google.com/file/d/1dBGQPdFCfFm9nkMvBh7OsPdFOLrtVRuP/view',
         picture: 'https://m.media-amazon.com/images/I/41jOvUQ+dhL.jpg',
         author: 'Barbara Oakley',
-        pages: 336
+        pages: 269
     }, 
     {
         id: 3,
@@ -29,7 +29,7 @@ export const books: Book[] = [
         localLink: 'https://drive.google.com/file/d/19730LdGsKZzYXsRJKG-mpGeRa3rpxkR4/view',
         picture: 'https://m.media-amazon.com/images/I/41xShlnTZTL._SX376_BO1,204,203,200_.jpg',
         author: 'Robert C. Martin',
-        pages: 464
+        pages: 462
     },
     {
         id: 4,
@@ -39,6 +39,36 @@ export const books: Book[] = [
         localLink: 'https://drive.google.com/file/d/1zyL5Z4hPLC_A2oQ1wbSr-fAFvlgTdojt/view',
         picture: 'https://m.media-amazon.com/images/I/41-sN-mzwKL._SX218_BO1,204,203,200_QL40_ML2_.jpg',
         author: 'Robert C. Martin',
-        pages: 432
+        pages: 442
+    },
+    {
+        id: 5,
+        title: "Head First: Design Patterns",
+        description: "What’s so special about design patterns? At any given moment, someone struggles with the same software design problems you have. And, chances are, someone else has already solved your problem. This edition of Head First Design Patterns—now updated for Java 8—shows you the tried-and-true, road-tested patterns used by developers to create functional, elegant, reusable, and flexible software. By the time you finish this book, you’ll be able to take advantage of the best design practices and experiences of those who have fought the beast of software design and triumphed.",
+        link: "https://www.amazon.fr/First-Design-Patterns-Elisabeth-Freeman/dp/0596007124",
+        localLink: "https://drive.google.com/file/d/1B3D3wVFnx1K2sPhLaL1RvBFghObkvf53/view",
+        picture: "https://m.media-amazon.com/images/I/61APhXCksuL._SX430_BO1,204,203,200_.jpg",
+        author: "Eric Freeman & Elisabeth Robson & Bert Bates & Kathy Sierra",
+        pages: 867
+    },
+    {
+        id: 6,
+        title: "Test Driven Development: By Example",
+        description: "Follows two TDD projects from start to finish, illustrating techniques programmers can use to increase the quality of their work. The examples are followed by references to the featured TDD patterns and refactorings. This book emphasises on agile methods and fast development strategies.",
+        link: "https://www.amazon.fr/Test-Driven-Development-Kent-Beck/dp/0321146530",
+        localLink: "https://drive.google.com/file/d/1Qyw4rQm_FtUMK4oH_lYdmBPDmRKW_Yhi/view",
+        picture: "https://m.media-amazon.com/images/I/51GGLEZlGqL._SX515_BO1,204,203,200_.jpg",
+        author: "Kent Beck",
+        pages: 241
+    },
+    {
+        id: 7,
+        title: "TWorking Effectively with Legacy Code",
+        description: "This book provides programmers with the ability to cost effectively handlecommon legacy code problems without having to go through the hugelyexpensive task of rewriting all existing code. It describes a series of practicalstrategies that developers can employ to bring their existing softwareapplications under control. The author provides useful guidance about howto identify problem areas and provides techniques for transformingunmanageable code into manageable code.",
+        link: "https://www.amazon.fr/Working-Effectively-Legacy-Michael-Feathers/dp/0131177052",
+        localLink: "https://drive.google.com/file/d/1IlKXP3K-VbAlXI5Ux2LV1ig0RbPDrhjS/view",
+        picture: "https://m.media-amazon.com/images/I/51yS8PYs03L._SX376_BO1,204,203,200_.jpg",
+        author: "Michael Feathers",
+        pages: 458
     }
 ];
