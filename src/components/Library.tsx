@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardBody, CardFooter, CardHeader, FormControl, FormErrorMessage, FormHelperText, Grid, GridItem, HStack, Heading, Highlight, Image, Input, Link, Text, VStack, useToast } from "@chakra-ui/react";
+import { Box, Button, Card, CardBody, CardFooter, CardHeader, CircularProgress, CircularProgressLabel, FormControl, FormErrorMessage, FormHelperText, Grid, GridItem, HStack, Heading, Highlight, Image, Input, Link, Text, VStack, useToast } from "@chakra-ui/react";
 import { Icon } from '@chakra-ui/react';
 import { AiFillAmazonCircle } from 'react-icons/ai';
 import { FiExternalLink, FiBookOpen } from 'react-icons/fi';
@@ -20,6 +20,14 @@ export const Library = () => {
     const inputRef = useRef<HTMLInputElement>(null);
     const toast = useToast();
 
+    const getPageCompletionPercentage = () => {
+        if (!currentReadingBook) {
+            return 0;
+        }
+
+        return Math.round((page / currentReadingBook.pages) * 100);
+    }
+
     const handlePageChange = () => {
 
         if (!currentReadingBook) {
@@ -33,14 +41,16 @@ export const Library = () => {
         }
 
         setIsError(false);
-        setPage(pageValue);
     };
     const setCurrentPage = () => {
         if (!currentReadingBook) {
             return;
         }
 
-        BookService.setCurrentPage(page, currentReadingBook);
+        const pageValue = inputRef.current?.valueAsNumber || 0;
+        setPage(pageValue);
+
+        BookService.setCurrentPage(pageValue, currentReadingBook);
         inputRef.current && (inputRef.current.value = '');
 
         toast({
@@ -151,23 +161,37 @@ export const Library = () => {
                                             </HStack>
                                         </CardHeader>
                                         <CardBody>
-                                            <Text fontWeight={'semibold'} my={2}>Current Page : {page}</Text>
-                                            <Text fontWeight={'semibold'} my={2}>Total Pages : {currentReadingBook.pages}</Text>
+                                            <HStack justifyContent={'space-between'} alignItems={'center'}>
+                                                <Box>
+                                                    <Text fontWeight={'semibold'} my={2}>Current Page : {page}</Text>
+                                                    <Text fontWeight={'semibold'} my={2}>Total Pages : {currentReadingBook.pages}</Text>
 
-                                            <FormControl isInvalid={isError}>
-                                                <HStack gap={4} mt={8} >
-                                                    <Input ref={inputRef} onChange={handlePageChange} required w={24} size={'sm'} type={'number'} placeholder="Page" />
-                                                    <Button isDisabled={isError} onClick={setCurrentPage} px={8} variant={'outline'} colorScheme="green" size={'sm'}>Save</Button>
-                                                </HStack>
+                                                    <FormControl isInvalid={isError}>
+                                                        <HStack gap={4} mt={8} >
+                                                            <Input ref={inputRef} onChange={handlePageChange} required w={24} size={'sm'} type={'number'} placeholder="Page" />
+                                                            <Button isDisabled={isError} onClick={setCurrentPage} px={8} variant={'outline'} colorScheme="green" size={'sm'}>Save</Button>
+                                                        </HStack>
 
-                                                <Box mt={6}>
-                                                    {!isError ? (
-                                                        <FormHelperText>Enter the page you are currently reading.</FormHelperText>
-                                                    ) : (
-                                                        <FormErrorMessage>Page must be between 1 and {currentReadingBook.pages}</FormErrorMessage>
-                                                    )}
+                                                        <Box mt={6}>
+                                                            {!isError ? (
+                                                                <FormHelperText>Enter the page you are currently reading.</FormHelperText>
+                                                            ) : (
+                                                                <FormErrorMessage>Page must be between 1 and {currentReadingBook.pages}</FormErrorMessage>
+                                                            )}
+                                                        </Box>
+                                                    </FormControl>
                                                 </Box>
-                                            </FormControl>
+
+                                                <Box>
+                                                    <CircularProgress value={getPageCompletionPercentage()} color='green.400' size={'12rem'}>
+                                                        <CircularProgressLabel>
+                                                            {
+                                                                getPageCompletionPercentage() + '%'
+                                                            }
+                                                        </CircularProgressLabel>
+                                                    </CircularProgress>
+                                                </Box>
+                                            </HStack>
                                         </CardBody>
                                         <CardFooter>
                                         </CardFooter>
