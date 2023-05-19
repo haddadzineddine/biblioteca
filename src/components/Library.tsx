@@ -8,14 +8,14 @@ import { BookService } from "../services/book.service";
 
 export const Library = () => {
 
-    const currentBook: Book | null = BookService.getCurrentBook();
-    const leftBooks: Book[] = BookService.getLeftBooks();
+    const currentBook = BookService.getCurrentBook();
 
     const [page, setPage] = useState(currentBook ? BookService.getCurrentPage(currentBook) : 0);
     const [isError, setIsError] = useState(false);
 
-    const [leftBooksToRead, setLeftBooksToRead] = useState<Book[]>(leftBooks);
     const [currentReadingBook, setCurrentReadingBook] = useState<Book | null>(currentBook);
+    const [leftBooksToRead, setLeftBooksToRead] = useState<Book[]>(BookService.getLeftBooks());
+    const [completedBooks, setCompletedBooks] = useState<Book[]>(BookService.getCompletedBooks());
 
     const inputRef = useRef<HTMLInputElement>(null);
     const toast = useToast();
@@ -75,10 +75,26 @@ export const Library = () => {
         console.log(BookService.getLeftBooks());
         setLeftBooksToRead(BookService.getLeftBooks());
         setCurrentReadingBook(null);
+        setCompletedBooks(BookService.getCompletedBooks());
 
         toast({
             title: "Book completed.",
             description: "The book has been marked as completed.",
+            status: "success",
+            position: "bottom-right",
+            duration: 3000,
+        });
+    };
+
+    const readBookAgain = (book: Book) => {
+        BookService.markAsUnread(book);
+        setLeftBooksToRead(BookService.getLeftBooks());
+        setCompletedBooks(BookService.getCompletedBooks());
+        setCurrentReadingBook(book);
+
+        toast({
+            title: "Book marked as unread.",
+            description: "The book has been marked as unread.",
             status: "success",
             position: "bottom-right",
             duration: 3000,
@@ -117,12 +133,12 @@ export const Library = () => {
 
                     {
                         currentReadingBook ? (
-                            <Grid borderRadius={4} templateColumns='repeat(auto-fill, minmax(450px, 1fr))' gap={6} >
+                            <Grid rounded={'lg'} templateColumns='repeat(auto-fill, minmax(450px, 1fr))' gap={6} >
                                 <GridItem >
-                                    <Card borderRadius={4} height={'full'}>
+                                    <Card rounded={'lg'} height={'full'}>
 
                                         <CardHeader>
-                                            <HStack justifyContent={'space-between'} gap={12} alignItems={'start'} p={2} borderRadius={4}>
+                                            <HStack justifyContent={'space-between'} gap={12} alignItems={'start'} p={2} rounded={'lg'}>
                                                 <Heading fontSize={'2xl'} fontWeight={'bold'}>
                                                     {currentReadingBook.title}
                                                 </Heading>
@@ -149,10 +165,10 @@ export const Library = () => {
                                     </Card>
                                 </GridItem>
                                 <GridItem >
-                                    <Card borderRadius={4} >
+                                    <Card rounded={'lg'} >
 
                                         <CardHeader>
-                                            <HStack justifyContent={'space-between'} gap={12} alignItems={'center'} p={2} borderRadius={4}>
+                                            <HStack justifyContent={'space-between'} gap={12} alignItems={'center'} p={2} rounded={'lg'}>
                                                 <Heading fontSize={'2xl'} fontWeight={'bold'}>
                                                     Status
                                                 </Heading>
@@ -202,9 +218,9 @@ export const Library = () => {
 
                             </Grid>
                         ) : (
-                            <Card borderRadius={4} w={1 / 3}>
+                            <Card rounded={'lg'} w={1 / 3}>
                                 <CardHeader>
-                                    <HStack justifyContent={'space-between'} gap={12} alignItems={'center'} p={2} borderRadius={4}>
+                                    <HStack justifyContent={'space-between'} gap={12} alignItems={'center'} p={2} rounded={'lg'}>
                                         <Heading fontSize={'2xl'} fontWeight={'bold'}>
                                             No book selected
                                         </Heading>
@@ -218,6 +234,7 @@ export const Library = () => {
                     }
                 </Box>
 
+
                 <Box mt={8}>
                     <Heading fontSize={'2xl'} fontWeight={'bold'} my={12}>
                         <Highlight query={'Next to Read'} styles={{ px: '1', py: '1', bg: 'red.100' }}>
@@ -225,15 +242,15 @@ export const Library = () => {
                         </Highlight>
                     </Heading>
 
-                    <Grid templateColumns='repeat(auto-fit, minmax(450px, 1fr))' gap={6} columnGap={12} borderRadius={4}>
+                    <Grid templateColumns='repeat(auto-fit, minmax(450px, 1fr))' gap={6} columnGap={12} rounded={'lg'}>
                         {
                             leftBooksToRead.length > 0 ? (
                                 leftBooksToRead.map((book) => (
                                     <GridItem key={book.id}>
-                                        <Card borderRadius={4} height={'full'}>
+                                        <Card rounded={'lg'} height={'full'}>
 
                                             <CardHeader>
-                                                <HStack justifyContent={'space-between'} gap={12} alignItems={'start'} p={2} borderRadius={4}>
+                                                <HStack justifyContent={'space-between'} gap={12} alignItems={'start'} p={2} rounded={'lg'}>
                                                     <Heading fontSize={'2xl'} fontWeight={'bold'}>
                                                         {book.title}
                                                     </Heading>
@@ -254,9 +271,9 @@ export const Library = () => {
                                     </GridItem>
                                 ))
                             ) : (
-                                <Card borderRadius={4}>
+                                <Card rounded={'lg'}>
                                     <CardHeader>
-                                        <HStack justifyContent={'space-between'} gap={12} alignItems={'center'} p={2} borderRadius={4}>
+                                        <HStack justifyContent={'space-between'} gap={12} alignItems={'center'} p={2} rounded={'lg'}>
                                             <Heading fontSize={'2xl'} fontWeight={'bold'}>
                                                 No books left to read
                                             </Heading>
@@ -270,7 +287,55 @@ export const Library = () => {
                         }
                     </Grid>
                 </Box>
+
+
+                <Box mt={8}>
+                    <Heading fontSize={'2xl'} fontWeight={'bold'} my={12}>
+                        <Highlight query={'Completed Books'} styles={{ px: '1', py: '1', bg: 'blue.100' }}>
+                            Completed Books
+                        </Highlight>
+                    </Heading>
+
+                    <Grid templateColumns='repeat(auto-fit, 350px)' gap={6} columnGap={12} rounded={'lg'} autoFlow={'column'}>
+                        {
+                            completedBooks.length > 0 ? (
+                                completedBooks.map((book) => (
+                                    <GridItem key={book.id} >
+                                        <Card height={'full'} bg={'gray.100'} rounded={'lg'} >
+
+                                            <CardHeader>
+                                                <Button px={8} onClick={() => readBookAgain(book)} variant={'outline'} colorScheme="blue" size={'sm'}>Read again</Button>
+                                            </CardHeader>
+                                            <CardBody>
+                                                <Image h={'22rem'} w={'18rem'} src={book.picture} />
+                                                <Text mt={4} fontWeight={'bold'} fontSize={'sm'}>
+                                                    {book.title}
+                                                </Text>
+                                            </CardBody>
+
+                                        </Card>
+                                    </GridItem>
+                                ))
+                            ) : (
+                                <Card rounded={'lg'}>
+                                    <CardHeader>
+                                        <HStack justifyContent={'space-between'} gap={12} alignItems={'center'} p={2} rounded={'lg'}>
+                                            <Heading fontSize={'2xl'} fontWeight={'bold'}>
+                                                No book was completed
+                                            </Heading>
+                                        </HStack>
+                                    </CardHeader>
+                                    <CardBody>
+                                        <Text fontWeight={'semibold'} my={2}>
+                                            You have not completed any book yet.
+                                        </Text>
+                                    </CardBody>
+                                </Card>
+                            )
+                        }
+                    </Grid>
+                </Box>
             </Box>
-        </VStack>
+        </VStack >
     );
 };

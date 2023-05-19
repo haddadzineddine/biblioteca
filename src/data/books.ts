@@ -63,12 +63,22 @@ export const books: Book[] = [
     },
     {
         id: 7,
-        title: "TWorking Effectively with Legacy Code",
+        title: "Working Effectively with Legacy Code",
         description: "This book provides programmers with the ability to cost effectively handlecommon legacy code problems without having to go through the hugelyexpensive task of rewriting all existing code. It describes a series of practicalstrategies that developers can employ to bring their existing softwareapplications under control. The author provides useful guidance about howto identify problem areas and provides techniques for transformingunmanageable code into manageable code.",
         link: "https://www.amazon.fr/Working-Effectively-Legacy-Michael-Feathers/dp/0131177052",
         localLink: "https://drive.google.com/file/d/1IlKXP3K-VbAlXI5Ux2LV1ig0RbPDrhjS/view",
         picture: "https://m.media-amazon.com/images/I/51yS8PYs03L._SX376_BO1,204,203,200_.jpg",
         author: "Michael Feathers",
         pages: 458
+    }, 
+    {
+        id: 8,
+        title: "Grokking Algorithms",
+        description: "Grokking Algorithms is a fully illustrated, friendly guide that teaches you how to apply common algorithms to the practical problems you face every day as a programmer. You'll start with sorting and searching and, as you build up your skills in thinking algorithmically, you'll tackle more complex concerns such as data compression and artificial intelligence. Each carefully presented example includes helpful diagrams and fully annotated code samples in Python.",
+        link: "https://www.amazon.fr/Grokking-Algorithms-Aditya-Y-Bhargava/dp/1617292230",
+        localLink: "https://drive.google.com/file/d/1ipGAJtRGxJ-pGyUEEQcJQpbkvTaXi29s/view",
+        picture: "https://m.media-amazon.com/images/I/51xHI11aCvS._SX396_BO1,204,203,200_.jpg",
+        author: "Aditya Bhargava",
+        pages: 258
     }
 ];

@@ -15,7 +15,7 @@ export class BookService {
         if (!currentBook || this.isRead(currentBook)) {
             return null;
         }
-        
+
         return currentBook;
     }
 
@@ -39,6 +39,11 @@ export class BookService {
         localStorage.setItem('book_' + book.id, 'true');
     }
 
+    static markAsUnread(book: Book) {
+        localStorage.removeItem('book_' + book.id);
+        localStorage.removeItem('book_' + book.id + '_page');
+    }
+
     static isRead(book: Book): boolean {
         return localStorage.getItem('book_' + book.id) === 'true';
     }
@@ -59,5 +64,9 @@ export class BookService {
         }
 
         return +page;
+    }
+
+    static getCompletedBooks(): Book[] {
+        return this.getBooks().filter(book => this.isRead(book));
     }
 }
